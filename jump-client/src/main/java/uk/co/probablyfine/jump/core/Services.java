@@ -7,7 +7,8 @@ import org.apache.commons.exec.DefaultExecutor;
 
 public class Services {
 
-	private static final String CHECK_STATUS = "status";
+	private static final String CHECK_STATUS  = "status";
+	private static final String START_SERVICE = "service %s start";
 	
 	public static boolean isRunning(String serviceName) {
 		final CommandLine isRunningCmd = new CommandLine(CHECK_STATUS);
@@ -20,7 +21,19 @@ public class Services {
 		} catch (IOException e) {
 			return false;
 		}
+	}
+
+	public static boolean startService(String serviceName) {
+		final CommandLine isRunningCmd = new CommandLine(String.format(START_SERVICE, serviceName));
+		final DefaultExecutor executor = new DefaultExecutor();
+
+		isRunningCmd.addArgument(serviceName);
 		
+		try {
+			return (0 == executor.execute(isRunningCmd));
+		} catch (IOException e) {
+			return false;
+		}
 	}
 	
 }

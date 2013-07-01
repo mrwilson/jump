@@ -15,6 +15,32 @@
 
   <name>jump-client</name>
 
+  <build>
+	<plugins>
+	  <plugin>
+	    <artifactId>maven-assembly-plugin</artifactId>
+	    <configuration>
+	      <descriptorRefs>
+	        <descriptorRef>jar-with-dependencies</descriptorRef>
+	      </descriptorRefs>
+	      <archive>
+	        <manifest>
+	          <mainClass>uk.co.probablyfine.jump.Main</mainClass>
+	        </manifest>
+	      </archive>
+	    </configuration>
+	    <executions>
+			<execution>
+				<phase>package</phase>
+				<goals>
+					<goal>single</goal>
+				</goals>
+			</execution>
+		</executions>
+	  </plugin>
+	</plugins>
+  </build>
+
   <dependencies>
   	<dependency>
   		<groupId>org.apache.commons</groupId>

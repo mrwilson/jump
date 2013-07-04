@@ -9,6 +9,6 @@ public class Main {
 		System.out.println("MySQL is running? " + Services.isRunning("mysql"));
 		System.out.println("Madeupname is running? " + Services.isRunning("madeupname"));
 		System.out.println("Awesome is installed? " + Packages.isInstalled("awesome"));
+		Packages.installPackage("awesome");
 	}
-
 }

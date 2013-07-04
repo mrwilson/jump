@@ -15,6 +15,7 @@ public class Services {
 		final DefaultExecutor executor = new DefaultExecutor();
 		
 		isRunningCmd.addArgument(serviceName);
+		executor.setStreamHandler(new NullReporter());
 		
 		try {
 			return (0 == executor.execute(isRunningCmd));
@@ -28,6 +29,7 @@ public class Services {
 		final DefaultExecutor executor = new DefaultExecutor();
 
 		isRunningCmd.addArgument(serviceName);
+		executor.setStreamHandler(new NullReporter());
 		
 		try {
 			return (0 == executor.execute(isRunningCmd));

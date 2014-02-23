@@ -1,7 +1,5 @@
 package uk.co.probablyfine.jump.core;
 
-import sun.awt.image.ImageWatched;
-
 import java.io.*;
 import java.util.LinkedList;
 
